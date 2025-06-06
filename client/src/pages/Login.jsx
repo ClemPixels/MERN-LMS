@@ -64,18 +64,22 @@ const Login = () => {
   };
 
   useEffect(() => {
-    if(registerIsSuccess && registerData){
-      toast.success(registerData.message || "Signup successful.")
+    if (registerIsSuccess && registerData) {
+      console.log(`registerData: ${JSON.stringify(registerData)}`);
+      toast.success(registerData?.message || "Signup successful.");
     }
-    if(registerError){
-      toast.error(registerError.data.message || "Signup Failed");
+    if (registerError) {
+      console.log(`registerError: ${JSON.stringify(registerError)}`);
+      toast.error(registerError.data?.message || "Signup Failed");
     }
-    if(loginIsSuccess && loginData){
-      toast.success(loginData.message || "Login successful.");
+    if (loginIsSuccess && loginData) {
+      console.log(`loginData: ${JSON.stringify(loginData)}`);
+      toast.success(loginData?.message || "Login successful.");
       navigate("/");
     }
-    if(loginError){ 
-      toast.error(loginError.data.message || "login Failed");
+    if (loginError) {
+      console.log(`loginError: ${JSON.stringify(loginError)}`);
+      toast.error(loginError.data?.message || "login Failed");
     }
   }, [
     loginIsLoading,
@@ -120,7 +124,7 @@ const Login = () => {
                   name="email"
                   value={signupInput.email}
                   onChange={(e) => changeInputHandler(e, "signup")}
-                  placeholder="Eg. patel@gmail.com"
+                  placeholder="Eg. example@gmail.com"
                   required="true"
                 />
               </div>
@@ -169,7 +173,7 @@ const Login = () => {
                   name="email"
                   value={loginInput.email}
                   onChange={(e) => changeInputHandler(e, "login")}
-                  placeholder="Eg. patel@gmail.com"
+                  placeholder="Eg. example@gmail.com"
                   required="true"
                 />
               </div>
