@@ -25,6 +25,12 @@ app.use(cors({
     origin:"https://clempixels-learning-platform.onrender.com",
     credentials:true
 }));
+
+app.options('*', cors({
+  origin: "https://clempixels-learning-platform.onrender.com",
+  credentials: true
+}));
+
  
 // apis
 app.use("/api/v1/media", mediaRoute);
