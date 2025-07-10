@@ -22,7 +22,8 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(cors({
-    origin:["https://clempixels-learning-platform.onrender.com", "https://mern-lms-hazel.vercel.app"],
+    // ["https://clempixels-learning-platform.onrender.com",
+    origin:"https://mern-lms-hazel.vercel.app",
     credentials:true
 }));
  
