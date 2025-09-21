@@ -17,14 +17,17 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-// default middleware
-app.use(express.json());
-app.use(cookieParser());
-
 app.use(cors({
     origin:["https://clempixels-learning-platform.onrender.com", "http://localhost:5173"],
     credentials:true
 }));
+
+app.options("*", cors());
+
+// default middleware
+app.use(express.json());
+app.use(cookieParser());
+
 
  
 // apis
