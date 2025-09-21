@@ -28,7 +28,9 @@ app.options("*", cors());
 app.use(express.json());
 app.use(cookieParser());
 
-
+app.get("/", (req, res) => {
+  res.send("This is the api for https://clempixels-learning-platform.onrender.com")
+})
  
 // apis
 app.use("/api/v1/media", mediaRoute);
